@@ -24,8 +24,7 @@ const ImageGenerator = () => {
       setShowError(false);
       setLoading(true);
       setGenerationFailed(false);
-      setCharacterError(false);  // Reset character error state
-    
+      setCharacterError(false);  
       if (!prompt) {
         setShowError(true);
         setLoading(false);
