@@ -263,7 +263,8 @@ const ImageGenerator = () => {
                 value={characterName}
                 onChange={(e) => setCharacterName(e.target.value)}
                 style={styles.select}
-              > 
+              >
+                <option value="">Select a character</option>
                 <option value="charctr_cby">Character CBY</option>
                 <option value="charctr_cgl">Character CGL</option>
                 <option value="charctr_omn">Character OMN</option>
