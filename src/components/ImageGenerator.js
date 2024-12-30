@@ -16,66 +16,72 @@ const ImageGenerator = () => {
    const token = process.env.REACT_APP_env_token;
    console.log(token); // This should now work fine
  
+ 
 
-  const handleGenerate = async () => {
-    setShowError(false);
-    setLoading(true); 
-    setGenerationFailed(false);  // Reset failure state
+    const [characterError, setCharacterError] = useState(false);  // Add this line
 
-    if (!prompt) {
-      setShowError(true);
-      setLoading(false);
-      return;
-    }
-
-    if (selection === "character" && !characterName) {
-      setShowError(true);
-      setLoading(false);
-      return;
-    }
-
-    let url = "";
-    let requestData = {};
-
-    if (selection === "environment") {
-      url = "https://infer.e2enetworks.net/project/p-4290/endpoint/is-3253/generate_background";
-      requestData = {
-        generate: {
-          background: {
-            bg_prompt: prompt,
+    const handleGenerate = async () => {
+      setShowError(false);
+      setLoading(true);
+      setGenerationFailed(false);
+      setCharacterError(false);  // Reset character error state
+    
+      if (!prompt) {
+        setShowError(true);
+        setLoading(false);
+        return;
+      }
+    
+      if (selection === "character" && !characterName) {
+        setCharacterError(true);  // Set character error if no character is selected
+        setLoading(false);
+        return;
+      }
+    
+      let url = "";
+      let requestData = {};
+    
+      if (selection === "environment") {
+        url = "https://infer.e2enetworks.net/project/p-4290/endpoint/is-3253/generate_background";
+        requestData = {
+          generate: {
+            background: {
+              bg_prompt: prompt,
+            },
           },
-        },
-      };
-    } else if (selection === "character") {
-      url = "https://infer.e2enetworks.net/project/p-4290/endpoint/is-3253/generate_character";
-      requestData = {
-        generate: {
-          character: {
-            character_name: characterName,
-            character_prompt: prompt,
+        };
+      } else if (selection === "character") {
+        url = "https://infer.e2enetworks.net/project/p-4290/endpoint/is-3253/generate_character";
+        requestData = {
+          generate: {
+            character: {
+              character_name: characterName,
+              character_prompt: prompt,
+            },
           },
-        },
-      };
-    }
+        };
+      }
+    
+      try {
+        const response = await axios.post(url, requestData, {
+          responseType: "arraybuffer",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+    
+        const imageBlob = new Blob([response.data], { type: "image/png" });
+        const imageObjectURL = URL.createObjectURL(imageBlob);
+        setImage(imageObjectURL);
+      } catch (error) {
+        console.error("Error generating image:", error);
+        setGenerationFailed(true);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    try {
-      const response = await axios.post(url, requestData, {
-        responseType: "arraybuffer",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      const imageBlob = new Blob([response.data], { type: "image/png" });
-      const imageObjectURL = URL.createObjectURL(imageBlob);
-      setImage(imageObjectURL);
-    } catch (error) {
-      console.error("Error generating image:", error);
-      setGenerationFailed(true);  // Set generation failed state
-    } finally {
-      setLoading(false);
-    }
-  };
+    
 
   const styles = {
     page: {
@@ -83,7 +89,7 @@ const ImageGenerator = () => {
       flexDirection: "column",
       alignItems: "center",
       padding: "20px",
-      backgroundColor: "#e6e6e6",
+      backgroundColor: "#ccffff",
       fontFamily: "Arial, sans-serif",
       minHeight: "100vh",
     },
@@ -111,7 +117,7 @@ const ImageGenerator = () => {
     leftSide: {
       width: "40%",
       padding: "20px",
-      backgroundColor: "#ffffff",
+      backgroundColor: "#b3ffff",
       borderRadius: "8px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       display: "flex",
@@ -121,7 +127,7 @@ const ImageGenerator = () => {
     rightSide: {
       width: "60%",
       padding: "20px",
-      backgroundColor: "#ffffff",
+      backgroundColor: "#b3ffff",
       borderRadius: "8px",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       textAlign: "center",
