@@ -269,6 +269,7 @@ const ImageGenerator = () => {
                 <option value="charctr_cgl">Character CGL</option>
                 <option value="charctr_omn">Character OMN</option>
               </select>
+              {characterError && <span style={styles.errorMessage}>Please select a character!</span>} 
             </div>
           )}
           <div style={styles.section}>
