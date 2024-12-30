@@ -83,7 +83,7 @@ const ImageGenerator = () => {
       flexDirection: "column",
       alignItems: "center",
       padding: "20px",
-      backgroundColor: "#f5f5f5",
+      backgroundColor: "#e6e6e6",
       fontFamily: "Arial, sans-serif",
       minHeight: "100vh",
     },
