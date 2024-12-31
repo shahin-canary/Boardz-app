@@ -46,12 +46,12 @@
   align-items: center;
   gap: 10px;
   position: relative;
-  height: 60px; /* Adjust based on the desired effect */
+  height: 50px; /* Adjust based on the desired effect */
 }
 
 .bouncing-ball {
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: rgb(254, 255, 174);
   animation: ball-bounce 1.5s infinite ease-in-out;

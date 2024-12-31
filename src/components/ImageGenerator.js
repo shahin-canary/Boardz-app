@@ -87,7 +87,7 @@ const ImageGenerator = () => {
       alignItems: "center",
       padding: "20px",
       backgroundColor: "rgba(250, 255, 201, 0.94)",
-      minHeight: "100vh",
+      minHeight: "95vh",
       // fontFamily: "Arial, sans-serif", 
       fontFamily: "Lobster, cursive",
 
@@ -100,7 +100,7 @@ const ImageGenerator = () => {
       fontWeight: "bold",
     },
     description: {
-      fontSize: "1.2rem",
+      fontSize: "1.18rem",
       color: "rgb(0, 89, 255)",
       textAlign: "center",
       marginBottom: "40px",
@@ -140,18 +140,22 @@ const ImageGenerator = () => {
       borderTop: "10px solid rgb(252, 255, 77)",   
       borderRight: "10px solid rgb(252, 255, 77)",    
       boxShadow: "0 0 10px rgb(0, 89, 255)",  
-    },
-
+    }, 
     header: {
       fontSize: "1.8rem",
       marginBottom: "20px",
-      color: "rgb(252, 255, 77)",
+      color: "rgb(0, 89, 255)",
+      fontWeight: "bold",
+    },
+    rightHeader: { 
+      fontSize: "1.8rem",
+      marginBottom: "20px",
+      color: "rgb(219, 220, 187)",
       fontWeight: "bold",
     },
     radioGroup: {
       marginBottom: "20px",
-    },
-    
+    }, 
     radioLabel: {
       marginRight: "10px",
       fontSize: "1.2rem",
@@ -208,6 +212,8 @@ const ImageGenerator = () => {
       height: `${height}px`,
       maxWidth: "100%",
       maxHeight: "100%", 
+      border: "5px solid",  
+      boxShadow: "0px 0px 10px rgb(0, 78, 223)",  
     }),
     placeholder: {
       fontSize: "1.2rem",
@@ -296,31 +302,33 @@ const ImageGenerator = () => {
             </div>
           </div>
           <button onClick={handleGenerate} style={styles.button}>Generate</button>
-        </div>
-        <div style={styles.rightSide}>
-        <h2 style={styles.header}>Generated Image</h2>  
-        {loading ? (
-          <div style={styles.loading}>
-          <p style={{ marginRight: '11px'  }}>Loading</p>
-          <div className="bouncing-balls">
-              <div className="bouncing-ball"></div>
-              <div className="bouncing-ball"></div>
-              <div className="bouncing-ball"></div>
-              <div className="bouncing-ball"></div>
-              <div className="bouncing-ball"></div>
-            </div>
           </div>
-        ) : image ? (
-          <img src={image} alt="Generated" style={styles.image(imageSize.width, imageSize.height)} />
-        ) : (
-          generationFailed && (
-            <div>
-              <p style={styles.placeholder}>Generation failed. Try again.</p>
-              <button onClick={handleGenerate} style={styles.retryButton}>Retry</button>
+          <div style={styles.rightSide}>
+          <h2 style={styles.rightHeader}>
+            {loading ? "Generating..." : image ? "Generated Image" : "click 'Generate' to start the creative process and let the AI craft a sketch based on your prompt!"}
+          </h2>
+          {loading ? (
+            <div style={styles.loading}>
+              <p style={{ marginRight: '11px' }}>Generating</p>
+              <div className="bouncing-balls">
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+              </div>
             </div>
-          )
-        )} 
-        </div>
+          ) : image ? (
+            <img src={image} alt="Generated" style={styles.image(imageSize.width, imageSize.height)} />
+          ) : (
+            generationFailed && (
+              <div>
+                <p style={styles.placeholder}>Generation failed. Try again.</p>
+                <button onClick={handleGenerate} style={styles.retryButton}>Retry</button>
+              </div>
+            )
+          )}
+        </div> 
       </div>
     </div>
   );
