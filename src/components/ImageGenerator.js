@@ -145,7 +145,7 @@ const ImageGenerator = () => {
     header: {
       fontSize: "1.8rem",
       marginBottom: "20px",
-      color: "rgb(0, 89, 255)",
+      color: "rgb(252, 255, 77)",
       fontWeight: "bold",
     },
     radioGroup: {
