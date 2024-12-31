@@ -87,7 +87,7 @@ const ImageGenerator = () => {
       alignItems: "center",
       padding: "20px",
       backgroundColor: "rgba(250, 255, 201, 0.94)",
-      minHeight: "auto",
+      minHeight: "100vh" ,
       // fontFamily: "Arial, sans-serif", 
       fontFamily: "Lobster, cursive",
 
