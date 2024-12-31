@@ -212,8 +212,9 @@ const ImageGenerator = () => {
       height: `${height}px`,
       maxWidth: "100%",
       maxHeight: "100%",
-      border: isBackground ? "5px solid" : "none",  // Apply border only if it's a background
-      boxShadow: "0px 0px 10px rgb(0, 78, 223)",  
+      border: isBackground ? "5px solid" : "none",  
+      boxShadow: "0px 0px 20px rgb(0, 162, 255)",  
+      borderRadius: "10px"
     }), 
     placeholder: {
       fontSize: "1.2rem",

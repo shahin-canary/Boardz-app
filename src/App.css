@@ -53,7 +53,7 @@
   height: 12px;
   border-radius: 50%;
   background-color: rgb(219, 220, 187);
-  animation: ball-bounce 1.5s infinite ease-in-out;
+  animation: ball-bounce 1.3s infinite ease-in-out;
 }
 
 .bouncing-ball:nth-child(1) {
@@ -61,35 +61,35 @@
 }
 
 .bouncing-ball:nth-child(2) {
-  animation-delay: 0.3s;
+  animation-delay: 0.2s;
 }
 
 .bouncing-ball:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 0.4s;
 }
 
 .bouncing-ball:nth-child(4) {
-  animation-delay: 0.9s;
+  animation-delay: 0.6s;
 }
 
 .bouncing-ball:nth-child(5) {
-  animation-delay: 1.2s;
+  animation-delay: 0.8s;
 }
 
 .bouncing-ball:nth-child(6) {
-  animation-delay: 1.5s;
+  animation-delay: 1.0s;
 }
 
 .bouncing-ball:nth-child(7) {
-  animation-delay: 1.8s;
+  animation-delay: 1.2s;
 }
 
 .bouncing-ball:nth-child(8) {
-  animation-delay: 2.1s;
+  animation-delay: 2.4s;
 }
 
 .bouncing-ball:nth-child(9) {
-  animation-delay: 2.4s;
+  animation-delay: 2.6s;
 }
  
 
