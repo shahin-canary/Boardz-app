@@ -88,8 +88,8 @@ const ImageGenerator = () => {
       padding: "20px",
       backgroundColor: "rgba(250, 255, 201, 0.94)",
       minHeight: "100vh",
-      fontFamily: "Arial, sans-serif", 
-      // fontFamily: "Lobster, cursive",
+      // fontFamily: "Arial, sans-serif", 
+      fontFamily: "Lobster, cursive",
 
     },
     appHeader: {
@@ -151,6 +151,7 @@ const ImageGenerator = () => {
     radioGroup: {
       marginBottom: "20px",
     },
+    
     radioLabel: {
       marginRight: "10px",
       fontSize: "1.2rem",
@@ -207,8 +208,7 @@ const ImageGenerator = () => {
       height: `${height}px`,
       maxWidth: "100%",
       maxHeight: "100%",
-      borderRadius: "8px",
-      border: "4px solid #ddd",
+      borderRadius: "8px", 
     }),
     placeholder: {
       fontSize: "1.2rem",
