@@ -309,7 +309,7 @@ const ImageGenerator = () => {
           </h2>
           {loading ? (
             <div style={styles.loading}>
-              <p style={{ marginRight: '11px' }}>Generating</p>
+              {/* <p style={{ marginRight: '11px' }}></p> */}
               <div className="bouncing-balls">
                 <div className="bouncing-ball"></div>
                 <div className="bouncing-ball"></div>
