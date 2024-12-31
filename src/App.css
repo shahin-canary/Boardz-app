@@ -50,10 +50,10 @@
 }
 
 .bouncing-ball {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
-  background-color: #007bff;
+  background-color: rgb(254, 255, 174);
   animation: ball-bounce 1.5s infinite ease-in-out;
 }
 

@@ -79,29 +79,29 @@ const ImageGenerator = () => {
         setLoading(false);
       }
     };
-
-    
-
+ 
   const styles = {
     page: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       padding: "20px",
-      backgroundColor: "#ccffff",
-      fontFamily: "Arial, sans-serif",
+      backgroundColor: "rgba(250, 255, 201, 0.94)",
       minHeight: "100vh",
+      // fontFamily: "Arial, sans-serif", 
+      fontFamily: "Lobster, cursive",
+
     },
     appHeader: {
       fontSize: "3rem",
       marginBottom: "-10px",
-      color: "#333",
+      color: "rgb(0, 89, 255)",
       textAlign: "center",
       fontWeight: "bold",
     },
     description: {
       fontSize: "1.2rem",
-      color: "#333",
+      color: "rgb(0, 89, 255)",
       textAlign: "center",
       marginBottom: "40px",
       maxWidth: "80%",
@@ -113,33 +113,39 @@ const ImageGenerator = () => {
       gap: "20px",
       height: "600px",
     },
+
     leftSide: {
       width: "40%",
-      padding: "20px",
-      backgroundColor: "#b3ffff",
-      borderRadius: "8px",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      padding: "20px", 
       display: "flex",
       flexDirection: "column",
-      height: "100%",
+      height: "100%", 
+      borderRadius: "25px",
+      // borderBottom: "10px solid rgb(0, 89, 255)", 
+      // borderLeft: "10px solid rgb(0, 89, 255)", 
+      // boxShadow: "0 0 10px rgb(252, 255, 77)", 
     },
+
     rightSide: {
       width: "60%",
       padding: "20px",
-      backgroundColor: "#b3ffff",
-      borderRadius: "8px",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      backgroundColor: "rgb(0, 89, 255)", 
       textAlign: "center",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      height: "100%",
+      height: "100%",  
+      borderRadius: "25px",
+      borderTop: "10px solid rgb(252, 255, 77)",   
+      borderRight: "10px solid rgb(252, 255, 77)",    
+      boxShadow: "0 0 10px rgb(0, 89, 255)",  
     },
+
     header: {
       fontSize: "1.8rem",
       marginBottom: "20px",
-      color: "#333",
+      color: "rgb(0, 89, 255)",
       fontWeight: "bold",
     },
     radioGroup: {
@@ -148,7 +154,7 @@ const ImageGenerator = () => {
     radioLabel: {
       marginRight: "10px",
       fontSize: "1.2rem",
-      color: "#333",
+      color: "rgb(0, 89, 255)",
     },
     section: {
       marginBottom: "20px",
@@ -156,7 +162,7 @@ const ImageGenerator = () => {
     sectionHeading: {
       fontSize: "1.2rem",
       marginBottom: "10px",
-      color: "#333",
+      color: "rgb(0, 89, 255)",
     },
     select: {
       width: "100%",
@@ -172,7 +178,7 @@ const ImageGenerator = () => {
       position: "relative",
     },
     input: {
-      width: "100%",
+      width: "96%",
       padding: "10px",
       fontSize: "1rem",
       marginBottom: "5px",
@@ -187,8 +193,8 @@ const ImageGenerator = () => {
     button: {
       width: "100%",
       padding: "12px",
-      fontSize: "1.1rem",
-      backgroundColor: "#007bff",
+      fontSize: "1.4rem",
+      backgroundColor: "rgb(0, 89, 255)",
       color: "#fff",
       border: "none",
       borderRadius: "4px",
@@ -206,11 +212,11 @@ const ImageGenerator = () => {
     }),
     placeholder: {
       fontSize: "1.2rem",
-      color: "gray",
+      color: "rgb(219, 220, 187)",
     },  
     loading: {
       fontSize: "1.5rem",
-      color: "#007bff",
+      color: "rgb(254, 255, 174)",
       fontWeight: "bold",
       display: "flex",
       justifyContent: "center",
@@ -220,7 +226,7 @@ const ImageGenerator = () => {
       padding: "10px 20px",
       fontSize: "1.1rem",
       backgroundColor: "#dc3545",
-      color: "#fff",
+      color: "rgb(254, 255, 174)",
       border: "none",
       borderRadius: "4px",
       cursor: "pointer",
@@ -236,7 +242,7 @@ const ImageGenerator = () => {
     <div style={styles.page}>
       <h1 style={styles.appHeader}>BOARDZ APP</h1>
       <p style={styles.description}>
-        Generate AI-powered storyboards with quick sketches of characters, environments, and key scenes, streamlining the creative process.
+      Generate AI-powered storyboards, sketch characters and environments, and bring prompts to life—streamline your creative storytelling process effortlessly!
       </p>
       <div style={styles.container}>
         <div style={styles.leftSide}>
