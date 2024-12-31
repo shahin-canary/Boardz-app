@@ -158,11 +158,15 @@ const ImageGenerator = () => {
     }, 
     radioLabel: {
       marginRight: "10px",
-      fontSize: "1.2rem",
+      fontSize: "1.4rem",
       color: "rgb(0, 89, 255)",
     },
+    radioInput: {
+      transform: "scale(1.7)", 
+      marginRight: "10px",  
+    },
     section: {
-      marginBottom: "20px",
+      marginBottom: "15px",
     },
     sectionHeading: {
       fontSize: "1.2rem",
@@ -252,7 +256,7 @@ const ImageGenerator = () => {
       </p>
       <div style={styles.container}>
         <div style={styles.leftSide}>
-          <h2 style={styles.header}>Image Generator</h2>
+          <h2 style={styles.header}>Image Generator</h2>  
           <div style={styles.radioGroup}>
             <label style={styles.radioLabel}>
               <input
@@ -260,6 +264,7 @@ const ImageGenerator = () => {
                 value="environment"
                 checked={selection === "environment"}
                 onChange={() => setSelection("environment")}
+                style={styles.radioInput} // Apply the new style here
               />
               Environment
             </label>
@@ -269,10 +274,11 @@ const ImageGenerator = () => {
                 value="character"
                 checked={selection === "character"}
                 onChange={() => setSelection("character")}
+                style={styles.radioInput} // Apply the new style here
               />
               Character
             </label>
-          </div>
+          </div> 
           {selection === "character" && (
             <div style={styles.section}>
               <h2 style={styles.sectionHeading}>Character Selector</h2>
