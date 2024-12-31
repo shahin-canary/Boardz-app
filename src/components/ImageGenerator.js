@@ -206,15 +206,15 @@ const ImageGenerator = () => {
       cursor: "pointer",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       transition: "background-color 0.3s, transform 0.2s",
-    },
-    image: (width, height) => ({
+    }, 
+    image: (width, height, isBackground) => ({
       width: `${width}px`,
       height: `${height}px`,
       maxWidth: "100%",
-      maxHeight: "100%", 
-      border: "5px solid",  
+      maxHeight: "100%",
+      border: isBackground ? "5px solid" : "none",  // Apply border only if it's a background
       boxShadow: "0px 0px 10px rgb(0, 78, 223)",  
-    }),
+    }), 
     placeholder: {
       fontSize: "1.2rem",
       color: "rgb(219, 220, 187)",
