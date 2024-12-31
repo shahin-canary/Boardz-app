@@ -76,6 +76,24 @@
   animation-delay: 1.2s;
 }
 
+.bouncing-ball:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+.bouncing-ball:nth-child(7) {
+  animation-delay: 1.8s;
+}
+
+.bouncing-ball:nth-child(8) {
+  animation-delay: 2.1s;
+}
+
+.bouncing-ball:nth-child(9) {
+  animation-delay: 2.4s;
+}
+ 
+
+
 @keyframes ball-bounce {
   0% {
     transform: translateY(0) scale(1);
