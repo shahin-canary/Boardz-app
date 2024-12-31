@@ -207,8 +207,7 @@ const ImageGenerator = () => {
       width: `${width}px`,
       height: `${height}px`,
       maxWidth: "100%",
-      maxHeight: "100%",
-      borderRadius: "8px", 
+      maxHeight: "100%", 
     }),
     placeholder: {
       fontSize: "1.2rem",
