@@ -217,8 +217,8 @@ const ImageGenerator = () => {
       maxWidth: "100%",
       maxHeight: "100%",
       border: isBackground ? "5px solid" : "none",  
-      boxShadow: "0px 0px 20px rgb(0, 162, 255)",  
-      borderRadius: "10px"
+      boxShadow: "0px 0px 40px rgb(0, 204, 255)",  
+      borderRadius: "15px"
     }), 
     placeholder: {
       fontSize: "1.2rem",
