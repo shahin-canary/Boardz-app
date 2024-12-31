@@ -49,8 +49,8 @@
 }
 
 .bouncing-ball {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: rgb(219, 220, 187);
   animation: ball-bounce 1.5s infinite ease-in-out;
