@@ -316,6 +316,10 @@ const ImageGenerator = () => {
                 <div className="bouncing-ball"></div>
                 <div className="bouncing-ball"></div>
                 <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
+                <div className="bouncing-ball"></div>
               </div>
             </div>
           ) : image ? (
