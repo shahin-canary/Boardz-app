@@ -53,7 +53,7 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: rgb(254, 255, 174);
+  background-color: rgb(219, 220, 187);
   animation: ball-bounce 1.5s infinite ease-in-out;
 }
 
