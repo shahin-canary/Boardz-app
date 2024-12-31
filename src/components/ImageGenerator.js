@@ -159,6 +159,7 @@ const ImageGenerator = () => {
     radioLabel: {
       marginRight: "10px",
       fontSize: "1.4rem",
+      fontWeight: "bold", 
       color: "rgb(0, 89, 255)",
     },
     radioInput: {
