@@ -249,7 +249,8 @@ const ImageGenerator = () => {
     : { width: 500, height: 500 };
 
   return (
-    <div style={styles.page}>
+    <div style={styles.page}> 
+      <h1 style={{ ...styles.appHeader, fontFamily: "Arial, sans-serif" }}>BOARDZ APP</h1> 
       <h1 style={styles.appHeader}>BOARDZ APP</h1>
       <p style={styles.description}>
       Generate AI-powered storyboards, sketch characters and environments, and bring prompts to life—streamline your creative storytelling process effortlessly!
