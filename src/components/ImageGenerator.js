@@ -88,8 +88,8 @@ const ImageGenerator = () => {
       padding: "20px",
       backgroundColor: "rgba(250, 255, 201, 0.94)",
       minHeight: "100vh",
-      // fontFamily: "Arial, sans-serif", 
-      fontFamily: "Lobster, cursive",
+      fontFamily: "Arial, sans-serif", 
+      // fontFamily: "Lobster, cursive",
 
     },
     appHeader: {
