@@ -11,7 +11,8 @@ const ImageGenerator = () => {
   const [loading, setLoading] = useState(false);
   const [showError, setShowError] = useState(false);
   const [generationFailed, setGenerationFailed] = useState(false);  // New state for generation failure
- 
+  const [isHovered, setIsHovered] = useState(false);  
+
    // Declare token from environment variable
    const token = process.env.REACT_APP_env_token;
    console.log(token); // This should now work fine
@@ -86,7 +87,7 @@ const ImageGenerator = () => {
       flexDirection: "column",
       alignItems: "center",
       padding: "20px",
-      backgroundColor: "rgba(250, 255, 201, 0.94)",
+      backgroundColor: "rgb(203, 203, 203)", 
       minHeight: "95.5vh",
       // fontFamily: "Arial, sans-serif", 
       fontFamily: "Lobster, cursive",
@@ -95,16 +96,17 @@ const ImageGenerator = () => {
     appHeader: {
       fontSize: "3rem",
       marginBottom: "-10px",
-      color: "rgb(0, 89, 255)",
+      color: "rgb(0, 0, 0)",
       textAlign: "center",
       fontWeight: "bold",
     },
     description: {
-      fontSize: "1.18rem",
-      color: "rgb(0, 89, 255)",
+      fontSize: "22px",
+      color: "rgb(0, 0, 0)",
       textAlign: "center",
-      marginBottom: "40px",
+      marginBottom: "25px",
       maxWidth: "80%",
+      fontWeight: "lighter", 
     },
     container: {
       display: "flex",
@@ -121,37 +123,44 @@ const ImageGenerator = () => {
       flexDirection: "column",
       height: "100%", 
       borderRadius: "25px",
-      // borderBottom: "10px solid rgb(0, 89, 255)", 
-      // borderLeft: "10px solid rgb(0, 89, 255)", 
-      // boxShadow: "0 0 10px rgb(252, 255, 77)", 
+
+      backgroundColor: "rgb(234, 234, 234)",   
+      boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",     
+      borderLeft: "10px solid rgb(203, 203, 203)",  
+      borderBottom: "10px solid rgb(203, 203, 203)", 
+      borderTop: "10px solid rgb(203, 203, 203)",   
     },
 
     rightSide: {
       width: "60%",
       padding: "20px",
-      backgroundColor: "rgb(0, 89, 255)", 
+      backgroundColor: "rgb(234, 234, 234)", 
       textAlign: "center",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
       height: "100%",  
-      borderRadius: "25px",
-      borderTop: "10px solid rgb(252, 255, 77)",   
-      borderRight: "10px solid rgb(252, 255, 77)",    
-      boxShadow: "0 0 10px rgb(0, 89, 255)",  
+      borderRadius: "25px",    
+      boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",    
+      borderRight: "10px solid rgb(203, 203, 203)",  
+      borderBottom: "10px solid rgb(203, 203, 203)", 
+      borderTop: "10px solid rgb(203, 203, 203)",    
+
+  
     }, 
+    
     header: {
       fontSize: "1.8rem",
       marginBottom: "20px",
-      color: "rgb(0, 89, 255)",
+      color: "rgb(0, 0, 0)",
       fontWeight: "bold",
     },
     rightHeader: { 
-      fontSize: "1.8rem",
-      marginBottom: "20px",
-      color: "rgb(219, 220, 187)",
-      fontWeight: "bold",
+      fontSize: "22px",
+      marginBottom: "20px", 
+      fontWeight: "bold", 
+      color: "rgb(0, 89, 255,0.9)"
     },
     radioGroup: {
       marginBottom: "20px",
@@ -160,7 +169,7 @@ const ImageGenerator = () => {
       marginRight: "10px",
       fontSize: "1.4rem",
       fontWeight: "bold", 
-      color: "rgb(0, 89, 255)",
+      color: "rgb(0, 0, 0)",
     },
     radioInput: {
       transform: "scale(1.7)", 
@@ -172,7 +181,7 @@ const ImageGenerator = () => {
     sectionHeading: {
       fontSize: "1.2rem",
       marginBottom: "10px",
-      color: "rgb(0, 89, 255)",
+      color: "rgb(0, 0, 0)",
     },
     select: {
       width: "100%",
@@ -199,18 +208,35 @@ const ImageGenerator = () => {
     errorMessage: {
       fontSize: "0.9rem",
       color: "red",
-    },
+    }, 
     button: {
       width: "100%",
       padding: "12px",
       fontSize: "1.4rem",
       backgroundColor: "rgb(0, 89, 255)",
-      color: "#fff",
+      color: "rgb(255, 255, 255)", // Button text color set to pink
       border: "none",
       borderRadius: "4px",
       cursor: "pointer",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-      transition: "background-color 0.3s, transform 0.2s",
+      position: "relative", // For the rocket light positioning
+      overflow: "hidden", // Prevent the light from going outside
+      transition: "background-color 0.3s, color 0.3s", // Smooth transition for color
+    },
+    
+    hoverButton: {
+      backgroundColor: "rgb(0, 66, 189)", // Darker shade for hover
+      color: "#fff", // Ensure the text stays pink on hover
+    },
+    
+    rocketLight: {
+      position: "absolute",
+      top: 0,
+      left: "-100%", // Start outside the button
+      width: "100%",
+      height: "100%",
+      background: "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%)",
+      animation: "rocket-light 1s ease-in-out infinite", // Animation definition
     }, 
     image: (width, height, isBackground) => ({
       width: `${width}px`,
@@ -218,16 +244,16 @@ const ImageGenerator = () => {
       maxWidth: "100%",
       maxHeight: "100%",
       border: isBackground ? "5px solid" : "none",  
-      boxShadow: "0px 0px 40px rgb(0, 204, 255)",  
+      boxShadow: "0px 0px 30px rgb(126, 126, 126)",  
       borderRadius: "15px"
     }), 
     placeholder: {
       fontSize: "1.2rem",
-      color: "rgb(219, 220, 187)",
+      color: "rgb(0, 89, 255)",
     },  
     loading: {
       fontSize: "1.5rem",
-      color: "rgb(254, 255, 174)",
+      color: "rgb(0, 89, 255)",
       fontWeight: "bold",
       display: "flex",
       justifyContent: "center",
@@ -237,13 +263,22 @@ const ImageGenerator = () => {
       padding: "10px 20px",
       fontSize: "1.1rem",
       backgroundColor: "#dc3545",
-      color: "rgb(254, 255, 174)",
+      color: "rgb(0, 89, 255)",
       border: "none",
       borderRadius: "4px",
       cursor: "pointer",
       marginTop: "20px",
     }, 
-  };
+
+
+
+
+
+    
+    
+    
+};
+ 
 
   const imageSize = selection === "environment" 
     ? { width: 984, height: 456 } 
@@ -251,8 +286,7 @@ const ImageGenerator = () => {
 
   return (
     <div style={styles.page}> 
-      <h1 style={{ ...styles.appHeader, fontFamily: "Arial, sans-serif" }}>BOARDZ APP</h1> 
-      {/* <h1 style={styles.appHeader}>BOARDZ APP</h1> */}
+      <h1 style={{ ...styles.appHeader, fontFamily: "Arial, sans-serif" }}>BOARDZ APP</h1>  
       <p style={styles.description}>
       Generate AI-powered storyboards, sketch characters and environments, and bring prompts to life—streamline your creative storytelling process effortlessly!
       </p>
@@ -276,7 +310,7 @@ const ImageGenerator = () => {
                 value="character"
                 checked={selection === "character"}
                 onChange={() => setSelection("character")}
-                style={styles.radioInput} // Apply the new style here
+                style={styles.radioInput}  
               />
               Character
             </label>
@@ -309,12 +343,21 @@ const ImageGenerator = () => {
               />
               {showError && !prompt && <span style={styles.errorMessage}>Please enter a prompt!</span>}
             </div>
-          </div>
-          <button onClick={handleGenerate} style={styles.button}>Generate</button>
-          </div>
+          </div>  
+          <button
+            onClick={handleGenerate}
+            style={isHovered ? { ...styles.button, ...styles.hoverButton } : styles.button}
+            onMouseEnter={() => setIsHovered(true)} // Set hover state
+            onMouseLeave={() => setIsHovered(false)} // Reset hover state
+          >
+            {isHovered && <div style={styles.rocketLight}></div>} {/* Add the rocket light on hover */}
+            Generate
+          </button>
+
+          </div> 
           <div style={styles.rightSide}>
           <h2 style={styles.rightHeader}>
-            {loading ? "Generating..." : image ? "Generated Image" : "click 'Generate' to start the creative process and let the AI craft a sketch based on your prompt!"}
+            {loading ? "Generating..." : image ? "Generated Image" : "Click 'Generate' to begin the process and let the AI create a sketch based on your prompt."}
           </h2>
           {loading ? (
             <div style={styles.loading}>

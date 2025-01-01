@@ -52,7 +52,7 @@
   width: 12px;
   height: 12px;
   border-radius: 47%;
-  background-color: rgb(219, 220, 187);
+  background-color: rgb(0, 89, 255);
   animation: ball-bounce 1.5s infinite ease-in-out;
 }
 
@@ -109,5 +109,42 @@
   }
   100% {
     transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes rocket-light {
+  0% {
+    left: -100%; /* Start off-screen */
+  }
+  10% {
+    left: -70%; /* Slow start */
+  }
+  20% {
+    left: -40%; /* Slow start continues */
+  }
+  30% {
+    left: -10%; /* Still slow */
+  }
+  40% {
+    left: 10%; /* Gradually increasing speed */
+  }
+  50% {
+    left: 30%; /* Medium speed */
+  }
+  60% {
+    left: 50%; /* Medium speed */
+  }
+  70% {
+    left: 70%; /* Fast speed */
+  }
+  80% {
+    left: 85%; /* Very fast speed */
+  }
+  90% {
+    left: 95%; /* Almost there */
+  }
+  100% {
+    left: 100%; /* Exit off-screen quickly */
   }
 }
