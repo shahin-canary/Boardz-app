@@ -112,12 +112,12 @@ const ImageGenerator = () => {
       display: "flex",
       justifyContent: "space-between",
       width: "90%",
-      gap: "20px",
+      gap: "15px",
       height: "600px",
     },
 
     leftSide: {
-      width: "40%",
+      width: "37%",
       padding: "20px", 
       display: "flex",
       flexDirection: "column",
@@ -125,10 +125,12 @@ const ImageGenerator = () => {
       borderRadius: "25px",
 
       backgroundColor: "rgb(234, 234, 234)",   
-      boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",     
-      borderLeft: "10px solid rgb(203, 203, 203)",  
-      borderBottom: "10px solid rgb(203, 203, 203)", 
-      borderTop: "10px solid rgb(203, 203, 203)",   
+      // boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",     
+      // borderLeft: "10px solid rgb(203, 203, 203)",  
+      // borderBottom: "10px solid rgb(203, 203, 203)", 
+      // borderTop: "10px solid rgb(203, 203, 203)",   
+      border: "10px solid rgba(156, 156, 156, 0.51)"
+
     },
 
     rightSide: {
@@ -142,11 +144,11 @@ const ImageGenerator = () => {
       alignItems: "center",
       height: "100%",  
       borderRadius: "25px",    
-      boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",    
-      borderRight: "10px solid rgb(203, 203, 203)",  
-      borderBottom: "10px solid rgb(203, 203, 203)", 
-      borderTop: "10px solid rgb(203, 203, 203)",    
-
+      // boxShadow: "0 0 20px rgba(228, 228, 228, 0.6)",    
+      // borderRight: "1px solid rgb(203, 203, 203)",  
+      // borderBottom: "1px solid rgb(203, 203, 203)", 
+      // borderTop: "11px solid rgb(203, 203, 203)",    
+      border: "10px solid rgba(156, 156, 156, 0.51)"
   
     }, 
     
